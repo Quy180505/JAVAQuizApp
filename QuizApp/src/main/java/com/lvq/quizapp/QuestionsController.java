@@ -4,9 +4,24 @@
  */
 package com.lvq.quizapp;
 
+import com.lvq.pojo.Category;
+import com.lvq.services.CategoryServices;
+import com.lvq.utils.JdbcConnector;
 import java.net.URL;
+import java.nio.channels.ConnectionPendingException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
+import java.util.List;
+import java.util.ArrayList;
+import javafx.collections.FXCollections;
+import javafx.fxml.FXML;
+import javafx.scene.control.ComboBox;
+
 
 /**
  * FXML Controller class
@@ -14,13 +29,19 @@ import javafx.fxml.Initializable;
  * @author admin
  */
 public class QuestionsController implements Initializable {
-
+      
+    
+      @FXML private ComboBox<Category> cbCates; 
+       private static final CategoryServices cateServices=new CategoryServices();
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
-    
+        try {
+            this.cbCates.setItems(FXCollections.observableList(cateServices.getCates()));
+        } catch (SQLException  ex) {
+            ex.printStackTrace();
+            }
+        }
 }
