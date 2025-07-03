@@ -6,18 +6,10 @@ package com.lvq.quizapp;
 
 import com.lvq.pojo.Category;
 import com.lvq.services.CategoryServices;
-import com.lvq.utils.JdbcConnector;
 import java.net.URL;
-import java.nio.channels.ConnectionPendingException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
-import java.util.List;
-import java.util.ArrayList;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;

@@ -1,23 +1,37 @@
 package com.lvq.quizapp;
 
 import com.lvq.utils.MyAlert;
+import com.lvq.utils.MyStage;
+import com.lvq.utils.themes.Theme;
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.ComboBox;
 
 
-public class PrimaryController {
+public class PrimaryController implements Initializable{
+    @FXML ComboBox<Theme> cbThemes;
+    
+    
+     @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        this.cbThemes.setItems(FXCollections.observableArrayList(Theme.values()));
+    }
     public void handleQuesTionManagement(ActionEvent event) throws IOException
     {
-         Scene scene = new Scene(new FXMLLoader(App.class.getResource("questions.fxml")).load());
-         Stage stage=new Stage();
-        stage.setScene(scene);
-        stage.show();
+        MyStage.getInstance().showStage("questions.fxml");
+       
     }
      public void handlePractice(ActionEvent event)
     {
-        MyAlert.getInstance().showMessage("coming soom");
+        MyAlert.getInstance().showMessage("coming soon");
     }
+     public void handleChangeTheme(ActionEvent event){
+       this.cbThemes.getSelectionModel().getSelectedItem().updateTheme(this.cbThemes.getScene());
+     }
+   
 }

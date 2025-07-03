@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
@@ -9,5 +10,9 @@
       <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Test" text="Quiz App" />
       <Button mnemonicParsing="false" onAction="#handleQuesTionManagement" styleClass="Button" text="Quản lý câu hỏi" />
       <Button mnemonicParsing="false" onAction="#handlePractice" styleClass="Button" text="Luyện tập" />
+      <ComboBox prefWidth="150.0" styleClass="Button" />
+      <ComboBox prefWidth="150.0" styleClass="Button" />
+      <ComboBox prefWidth="150.0" styleClass="Button" />
+      <ComboBox fx:id="cbThemes" onAction="#handleChangeTheme" prefWidth="150.0" styleClass="Button" />
    </children>
 </VBox>
