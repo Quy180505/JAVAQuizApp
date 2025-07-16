@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<VBox alignment="CENTER" prefHeight="516.0" prefWidth="555.0" styleClass="main" stylesheets="@style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lvq.quizapp.PrimaryController">
+<VBox alignment="CENTER" prefHeight="516.0" prefWidth="555.0" styleClass="main" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lvq.quizapp.PrimaryController">
    <children>
       <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Test" text="Quiz App" />
       <Button mnemonicParsing="false" onAction="#handleQuesTionManagement" styleClass="Button" text="Quản lý câu hỏi" />
@@ -13,6 +13,6 @@
       <ComboBox prefWidth="150.0" styleClass="Button" />
       <ComboBox prefWidth="150.0" styleClass="Button" />
       <ComboBox prefWidth="150.0" styleClass="Button" />
-      <ComboBox fx:id="cbThemes" onAction="#handleChangeTheme" prefWidth="150.0" styleClass="Button" />
+      <ComboBox fx:id="cbThemes" onAction="#handleChangeTheme" prefWidth="150.0" promptText="Quản lý hiển thị" styleClass="Button" />
    </children>
 </VBox>

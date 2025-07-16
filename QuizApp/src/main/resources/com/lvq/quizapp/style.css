@@ -8,8 +8,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 */
 .main{
     -fx-background-color: lightblue;
-    -fx-padding: 15;
-     -fx-spacing: 25;
+    -fx-spacing: 10;
+    -fx-padding:5;
+    
 }
 
 .Test{
@@ -24,8 +25,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 .Button{
     -fx-background-color: blue;
     -fx-text-fill:white;
-    -fx-pref-width:350;
-    -fx-font-size: 25;
-    -fx-alignment:center;
+    -fx-pref-width:400;
+    -fx-font-size: 20;
+    -fx-padding:2;
+   
    
 }
