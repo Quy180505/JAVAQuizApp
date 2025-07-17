@@ -6,4 +6,5 @@ module com.lvq.quizapp {
    
     opens com.lvq.quizapp to javafx.fxml;
     exports com.lvq.quizapp;
+    exports com.lvq.pojo;
 }

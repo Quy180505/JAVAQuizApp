@@ -10,12 +10,37 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
  * @author levan
  */
 public class QuestionServices {
+    
+    public List<Question> getQuestions() throws SQLException{
+        // kết nối cơ sở dữ liệu
+        Connection conn=JdbcConnector.getInstance().connect();
+        
+        //truy vấn data
+        
+        Statement stm=conn.createStatement();
+        ResultSet  rs= stm.executeQuery("Select * From question");
+        
+        List<Question> questions=new ArrayList<>();
+        while(rs.next())
+        {
+           Question q=new Question.Builder(rs.getInt("id"), rs.getString("content")).build();
+           questions.add(q);
+        }
+        return questions;
+}
+    
+    
+    
+    
     public void  addQuestion(Question q) throws SQLException{
         Connection conn=JdbcConnector.getInstance().connect();
         
@@ -36,10 +61,10 @@ public class QuestionServices {
               qId=r.getInt(1);
           }
            sql="INSERT INTO choice(content,is_correct,question_id) VALUES(?,?,?)";
-          
+           stm=conn.prepareCall(sql);
            for( var choice : q.getChoices())
            {
-               stm=conn.prepareCall(sql);
+              
                stm.setString(1, choice.getContent());
                stm.setBoolean(2, choice.isCorrect());
                stm.setInt(3, qId);

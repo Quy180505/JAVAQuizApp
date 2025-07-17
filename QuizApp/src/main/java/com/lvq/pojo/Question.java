@@ -12,22 +12,24 @@ import java.util.List;
  * @author levan
  */
 public class Question {
+
     private int id;
     private String content;
     private String hint;
     private String image;
-    
+
     private Category category;
     private Level level;
     private List<Choice> choices;
 
     private Question(Builder b) {
-        this.id=b.id;
-        this.hint=b.hint;
-        this.image=b.image;
-        this.category=b.category;
-        this.level=b.level;
-        this.choices=b.choices; 
+        this.id = b.id;
+        this.content=b.content;
+        this.hint = b.hint;
+        this.image = b.image;
+        this.category = b.category;
+        this.level = b.level;
+        this.choices = b.choices;
     }
 
     public int getId() {
@@ -57,52 +59,50 @@ public class Question {
     public List<Choice> getChoices() {
         return choices;
     }
-    
-    
-    
+
     public static class Builder {
-     private int id;
-    private String content;
-    private String hint;
-    private String image;
-    
-    private Category category;
-    private Level level;
-    private List<Choice> choices=new ArrayList<>();
-    
-    public Builder(String content,Category c,Level level) throws Exception
-    {
-        if(content.isEmpty()|| c==null|| level==null)
-        {
-            throw new Exception("invalid data");
+
+        private int id;
+        private String content;
+        private String hint;
+        private String image;
+
+        private Category category;
+        private Level level;
+        private List<Choice> choices = new ArrayList<>();
+
+        public Builder(String content, Category c, Level level) throws Exception {
+            if (content.isEmpty() || c == null || level == null) {
+                throw new Exception("invalid data");
+            }
+            this.content = content;
+            this.category = c;
+            this.level = level;
         }
-        this.content=content;
-        this.category=category;
-        this.level=level;
-    }
-    
-    public Builder addHint(String h)
-    {
-        this.hint=h;
-        return this;
-    }
-    
-    public Builder addImage(String image)
-    {
-        this.image=image;
-        return this;
-    }
-    public Builder addChoice(Choice c)
-    {
-        this.choices.add(c);
-        return this;
-    }
-  
-    public Question build()
-    {
-        return new Question(this);
-    }
-    
+
+        public Builder(int id, String content) {
+            this.content = content;
+            this.id = id;
+        }
+
+        public Builder addHint(String h) {
+            this.hint = h;
+            return this;
+        }
+
+        public Builder addImage(String image) {
+            this.image = image;
+            return this;
+        }
+
+        public Builder addChoice(Choice c) {
+            this.choices.add(c);
+            return this;
+        }
+
+        public Question build() {
+            return new Question(this);
+        }
+
     }
 }
-

@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleGroup?>
@@ -11,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="main" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lvq.quizapp.QuestionsController">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="613.0" prefWidth="600.0" styleClass="main" stylesheets="@style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lvq.quizapp.QuestionsController">
    <children>
       <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Test" text="Quản lý câu hỏi">
          <VBox.margin>
@@ -73,5 +74,6 @@
       </VBox>
       <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#addChoice" styleClass="Button" text="Thêm lựa chọn" textFill="#464242" />
       <Button mnemonicParsing="false" onAction="#addQuesTion" style="-fx-background-color: red;" styleClass="Button" text="Thêm câu hỏi" />
+      <TableView fx:id="tbQuestions" prefHeight="187.0" prefWidth="590.0" />
    </children>
 </VBox>
